@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -46,20 +47,7 @@
                 <div class="slider-wrapper">
                     <div class="inner">
                         <div class="slider-list">
-                            <!-- <div class="slider-item slide-active">
-                                <div class="slider-header">
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <i class="fa-solid fa-bars"></i>
-                                </div>
-                                <div class="slider-title">Pricing tables 1</div>
-                                <div class="slider-descript">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elit
-                                </div>
-                                <div class="slider-btns">
-                                    <div class="slider-btn">Purchase now</div>
-                                    <div class="slider-second-btn">More details</div>
-                                </div>
-                            </div> -->
+
                         </div>    
                     </div>
                     <div class='slider-right-arrow'>
@@ -69,7 +57,10 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                     <div class="slider-dots">
-
+                        <div class='slider-dot slider-dot-active' data-index-number='1' ></div>
+                        <div class='slider-dot' data-index-number='2' ></div>
+                        <div class='slider-dot' data-index-number='3' ></div>
+                        <div class='slider-dot' data-index-number='4' ></div>
                     </div>
                 </div>
             </div>
@@ -113,19 +104,23 @@
                             </div>
                             <div class="footer-item">
                                 <i class="fa-solid fa-phone"></i>
+                               <span class="website">Phone: </span>
                                 <span>+84 123 456 789</span>
                             </div>
                             <div class="footer-item">
                                 <i class="fa-solid fa-print"></i>
+                               <span class="website">Fax: </span>
                                <span>+84 123 456 789</span>
                             </div>
                             <div class="footer-item">
                                 <i class="fa-solid fa-envelope"></i>
-                              <span class="footer-email-E5R2Y">company@gmail.com</span>
+                               <span class="website">Email: </span>
+                              <span class="footer-link">company@gmail.com</span>
                             </div>
                             <div class="footer-item">
                                 <i class="fa-solid fa-earth-americas"></i>
-                               <span class="website">www.website.com</span>
+                               <span class="website">Website: </span>
+                               <span class="footer-link">www.website.com</span>
                             </div>
                         </div>
                     </div>
@@ -206,13 +201,20 @@
                                         
                                     </div>
                                     <div class='footer-comment'>
-                                    <textarea placeholder="Your message" cols="40" rows="5" type='text' class='footer-contact-input'>
-
-                                    </textarea>
+                                    <textarea placeholder="Your message" cols="40" rows="5" type='text' class='footer-contact-input'></textarea>
                                     </div>
 
                                     <button class="form-btn">SEND MESSAGE</button>
                                 </form>
+                            </div>
+                            <div class="footer-title">Projects / client ?</div>
+                            <div class="project-body">
+                                
+                            </div>
+                            <div class="project-dots">
+                                <div class="project-dot dot-active-2" data-index-number="0"></div>
+                                <div class="project-dot" data-index-number="1"></div>
+                                <div class="project-dot" data-index-number="2"></div>
                             </div>
                         </div>
                     </div>
@@ -240,6 +242,10 @@
                                 <div class="letter-icon">
                                     <i class="fa-solid fa-angle-right"></i>
                                 </div>
+                            </div>
+                            <div>
+                                <span style="color: aqua; padding-right: 4px;">*</span>
+                                <span>Personal infomation will be encrypted</span>
                             </div>
                         </div>
                     </div>
@@ -293,16 +299,24 @@
         const nextBtn = $('.slider-right-arrow')
         const prevBtn = $('.slider-left-arrow')
         const dotsGroup = $('.slider-dots')
+        const dots = $$('.slider-dot')
         const section1 = $('.home-section-1')
         const section2 = $('.home-section-2')
         const sliderWrapper = $('#slider')
-        
+        const project = $('.project-body')
+        const projectDots = $$('.project-dot')
 
-        
+        const createArr = (numUsers) => {
+            return new Array(numUsers)
+                .fill(undefined)
+        }
 
         const app = {
             itemActive: 1,
             navActive: 1,
+            projectItemActive: 0,
+            projectGr: createArr(3),
+            itemProjectGr: createArr(6),
 
             navs: [
                 {
@@ -345,22 +359,26 @@
             slider: [
                 {
                     id: 1,
-                    title: 'Pricing tables 1',
+                    firstTitle: 'Pricing',
+                    secondTitle: 'table 1',
                     descript: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elit'
                 },
                 {
                     id: 2,
-                    title: 'Pricing tables 2',
+                    firstTitle: 'Pricing',
+                    secondTitle: 'table 2',
                     descript: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elit'
                 },
                 {
                     id: 3,
-                    title: 'Pricing tables 3',
+                    firstTitle: 'Pricing',
+                    secondTitle: 'table 3',
                     descript: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elit'
                 },
                 {
                     id: 4,
-                    title: 'Pricing tables 4',
+                    firstTitle: 'Pricing',
+                    secondTitle: 'table 4',
                     descript: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit, sed dorem ipsum dolor sit amet, consectetur adipisicing elit'
                 },
             ],
@@ -494,12 +512,15 @@
 
                 const sliderHtmls = app.slider.map(item => {
                     return `
-                            <div class="slider-item ${app.itemActive === item.id && 'slide-active'}">
+                            <div class="slider-item ${app.itemActive === item.id && 'slide-active'}" id=${item.id}>
                                 <div class="slider-header">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <i class="fa-solid fa-bars"></i>
                                 </div>
-                                <div class="slider-title">${item.title}</div>
+                                <div class="slider-title">
+                                    <span>${item.firstTitle}</span>
+                                    <b><span>${item.secondTitle}</span></b>
+                                    </div>
                                 <div class="slider-descript">
                                     ${item.descript}
                                 </div>
@@ -510,14 +531,6 @@
                             </div>
                     `
                 })
-                
-                const dotsHtmls = app.slider.map(item => {
-                    return `
-                        <div class='slider-dot ${app.itemActive === item.id && 'slider-dot-active'}' data-index-number=${item.id} ></div>
-                    `
-                })
-                
-                dotsGroup.innerHTML = dotsHtmls.join('')
 
                 sliderDiv.innerHTML = sliderHtmls.join('')
 
@@ -525,7 +538,7 @@
                     return `
                         <div class="home-item">
                             <div class="home-title">${item.title}</div>
-                            <div class="home-price first">
+                            <div class="home-price ${item.id === 1 ? 'first' : item.id === 2 ? 'second' : item.id === 3 ? 'third' : 'fourth'}">
                                 ${item.price}
                                 <br>
                                 <span class="home-sub__text">
@@ -546,6 +559,7 @@
                                     }).join('')}
                                 </ul>
                                 <div class="home-section-1__btn">
+                                    <i class="fa-solid fa-play"></i>
                                     <span>ORDER</span>
                                 </div>
                                 ${item.isNew ? `<div class="new-tag">NEW</div>` : ''}
@@ -560,15 +574,17 @@
                     return `
                         <div class="home-item-2">
                             <div class="home-title">
-                                <p>Lorem ipsum</p>
+                                <p class="title-2">Lorem ipsum</p>
+                                <p class="sub-title-2">Subtitle goes here</p>
                                 <p class="home-sub__descipt">Subtitle second line goes here</p>
                             </div>
                             <div class="home-price-2">
                                 <p class="home-price__num">${item.price}</p>
                                 <p class="home-sub__text-2">per month</p>
                             </div>
-                            <div class="home-header">
+                            <div class="home-header home-header-2">
                                 ${item.title}
+                                <div class="home-sub-header">The best price/quantity plan *</div>
                             </div>
                             <ul class="content">
                                 ${item.permissions.map((x, index) => {
@@ -577,8 +593,8 @@
                                     `
                                 }).join('')}
                             </ul>
-                            <div class="home-section-1__btn">
-                                <span>ORDER NOW</span>
+                            <div class="home-section-1__btn home-section-2__btn">
+                                ORDER NOW
                             </div>
                             ${item.isNew ? `<div class="new-tag">NEW</div>` : ''}
 
@@ -588,12 +604,30 @@
 
                 section2.innerHTML = section2Htmls.join('')
 
+                const projectHtmls = app.projectGr.map((item, index) => {
+                    return `
+                        <div class="footer-feed-body project-items ${app.projectItemActive === index ? 'project-active' : ''}">
+                            ${app.itemProjectGr.map(x => {
+                                return `
+                                    <div class="footer-feed-item"></div>
+                                `
+                            }).join('')}           
+                        </div>
+                    `
+                })
+
+                project.innerHTML = projectHtmls.join('')
+
             },
 
             handleNext: function () {
-              if (app.itemActive < app.slider.length ) {
+              if (app.itemActive < app.slider.length) {
+                dots[app.itemActive-1].classList.remove('slider-dot-active')
+                dots[app.itemActive].classList.add('slider-dot-active')
                 app.itemActive++
-              }  else {
+              } else {
+                dots[0].classList.add('slider-dot-active')
+                dots[3].classList.remove('slider-dot-active')
                 app.itemActive = 1
               }
               app.render()
@@ -603,7 +637,11 @@
             handlePrev: function () {
                 if (app.itemActive === 1) {
                     app.itemActive = app.slider.length
+                    dots[3].classList.add('slider-dot-active')
+                    dots[0].classList.remove('slider-dot-active')
                 } else {
+                    dots[app.itemActive-1].classList.remove('slider-dot-active')
+                    dots[app.itemActive-2].classList.add('slider-dot-active')
                     app.itemActive--
                 }
                 app.render()
@@ -612,12 +650,35 @@
 
             handleDot: function (e) {
                 app.itemActive = Number(e.target.dataset.indexNumber)
+                const arr = e.target.parentElement.children
+
+                for (let i = 0; i < arr.length; i++) {
+                    const element = arr[i];
+                    element.classList.remove('slider-dot-active');
+                }
+
+                e.target.classList.add('slider-dot-active')
+
                 app.render()
                 return app.itemActive
             },
 
+            handleProjectDot: function(e) {
+                app.projectItemActive = Number(e.target.dataset.indexNumber)
+
+                const arr1 = e.target.parentElement.children
+
+                for (let i = 0; i < arr1.length; i++) {
+                    const element = arr1[i];
+                    element.classList.remove('dot-active-2');
+                }
+
+                e.target.classList.add('dot-active-2')
+                app.render()
+                return app.projectItemActive
+            },
+
             handleEvent: function () {
-                const dots =[...$$('.slider-dot')]
 
                 nextBtn.onclick = function () {
                     app.handleNext()
@@ -636,25 +697,34 @@
                         nextBtn.click()
                     }, 3000);
                 }
+                
+                // document.addEventListener("DOMContentLoaded", () => {
+                //     const navs = [...$$('.header-nav')]
+
+                //     for (let i = 0; i < navs.length; i++) {
+                //         const element = navs[i];
+                //         element.addEventListener("click", function () {
+                //         e.preventDefault()
+                //         app.navActive = Number(e.target.dataset.indexNumber);
+                //         app.render()
+                //         return app.navActive
+                //         }) 
+                //     }
+                // });
 
                 for (let i = 0; i < dots.length; i++) {
-                    dots[i].onclick = function (e) {
+                    const element = dots[i];
+                    element.addEventListener("click", function (e) {
                         app.handleDot(e)
-                    } 
+                    })
                 }
-                
-                document.addEventListener("DOMContentLoaded", () => {
-                    const navs = [...$$('.header-nav')]
 
-                    for (let i = 0; i < navs.length; i++) {
-                        const element = navs[i];
-                        element.onclick = function (e) {
-                        app.navActive = Number(e.target.dataset.indexNumber);
-                        app.render()
-                        return app.navActive
-                }  
-            }
-        });
+                for (let i = 0; i < projectDots.length; i++) {
+                    const element = projectDots[i];
+                    element.addEventListener("click", function (e) {
+                        app.handleProjectDot(e)
+                    })
+                }
             },
 
             start: function () {
@@ -662,7 +732,7 @@
                 this.handleEvent()
             }
         }
-
+        
         app.start()
     </script>
 </body>
