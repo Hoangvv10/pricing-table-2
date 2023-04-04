@@ -209,6 +209,7 @@
 
 .slider-left-arrow:hover, .slider-right-arrow:hover {
     background-color: #00bcd4;
+    
 }
 
 .slider-left-arrow {
@@ -629,10 +630,10 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 12px 12px 0;
+    border-width: 0 8px 8px 0;
     border-color: transparent transparent #f50057 transparent;
-    right: -18px;
-    top: 8px;
+    right: -12px;
+    top: 13px;
     position: absolute;
   }
 
@@ -800,6 +801,11 @@
 .bottom-nav {
     padding: 0 12px;
     cursor: pointer;
+    border-right: 2px solid #333146;
+}
+
+.bottom-nav:last-child {
+    border-right: none;
 }
 
 .bottom-icon {
