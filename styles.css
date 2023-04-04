@@ -67,7 +67,7 @@
     gap: 20px;
 }
 
-.header-languages {
+.language {
     width: 24px;
     height: 12px;
     display: flex;
@@ -203,12 +203,12 @@
     height: 80px;
     text-align: center;
     line-height: 80px;
-    background-color: #00bcd4;
+    background-color: #212331;
     cursor: pointer;
 }
 
 .slider-left-arrow:hover, .slider-right-arrow:hover {
-    opacity: 0.8;
+    background-color: #00bcd4;
 }
 
 .slider-left-arrow {
@@ -267,6 +267,10 @@
 
 .home-course-section {
     margin-top: 60px;
+}
+
+.home-item .is-line-through {
+    color: #a9b7c0;
 }
 
 .home-header {
@@ -341,6 +345,10 @@
 .home-section-2 {
     margin-top: 100px;
     justify-content: space-between;
+}
+
+.home-item-2:hover .is-line-through {
+    color: #5f727f;
 }
 
 .is-line-through {

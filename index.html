@@ -28,8 +28,11 @@
                     </div>
                     <div class="header-options">
                         <div class="header-languages">
-                            <img src="./assets/imgs/Uk-flag.png" alt="" class="flag-img">
+                            <div class="language">
+                                <img src="./assets/imgs/Uk-flag.png" alt="" class="flag-img">
+                            </div>
                         </div>
+
                         <div class="header-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
@@ -294,6 +297,7 @@
         const $ = document.querySelector.bind(document)
         const $$ = document.querySelectorAll.bind(document)
 
+        const language = $('.language')
         const headerNav = $('.header-navs')
         const sliderDiv = $('.slider-list')
         const nextBtn = $('.slider-right-arrow')
@@ -311,12 +315,34 @@
                 .fill(undefined)
         }
 
+        var pivotIndex = function(nums) {
+            for (let i = 0; i < nums.length; i++) {
+                    let a = nums.slice(0,i)
+                    let b = nums.slice(i+1)
+                    console.log(a);
+                    console.log(b);
+                    let c = 0
+                    let d = 0
+                a.forEach(item => c += item)
+                console.log(c);
+                b.forEach(item => d += item)
+                console.log(d);
+        if (c === d) {
+            return i
+        }
+    }
+    return -1
+
+};
+        console.log(pivotIndex([2,1,-1]));
+
         const app = {
             itemActive: 1,
             navActive: 1,
             projectItemActive: 0,
             projectGr: createArr(3),
             itemProjectGr: createArr(6),
+            projectDot: 0,
 
             navs: [
                 {
@@ -501,15 +527,7 @@
                 }
             ],
 
-            render: function () {
-                const headerHtmls = app.navs.map(item => {
-                    return `
-                    <li class="header-nav ${item.id === app.navActive ? 'is-active' : ''}" data-index-number=${item.id} >${item.title}</li>
-                    `
-                })
-
-                headerNav.innerHTML = headerHtmls.join('')
-
+            sliderRender: function () {
                 const sliderHtmls = app.slider.map(item => {
                     return `
                             <div class="slider-item ${app.itemActive === item.id && 'slide-active'}" id=${item.id}>
@@ -532,7 +550,17 @@
                     `
                 })
 
-                sliderDiv.innerHTML = sliderHtmls.join('')
+                sliderDiv.innerHTML = sliderHtmls.join('')  
+            },
+
+            render: function () {
+                const headerHtmls = app.navs.map(item => {
+                    return `
+                    <li class="header-nav ${item.id === app.navActive ? 'is-active' : ''}" data-index-number=${item.id} >${item.title}</li>
+                    `
+                })
+
+                headerNav.innerHTML = headerHtmls.join('')
 
                 const section1Htmls = app.courses.map(item => {
                     return `
@@ -630,7 +658,7 @@
                 dots[3].classList.remove('slider-dot-active')
                 app.itemActive = 1
               }
-              app.render()
+              app.sliderRender()
               return app.itemActive
             },
 
@@ -644,7 +672,7 @@
                     dots[app.itemActive-2].classList.add('slider-dot-active')
                     app.itemActive--
                 }
-                app.render()
+                app.sliderRender()
                 return app.itemActive
             },
 
@@ -659,7 +687,7 @@
 
                 e.target.classList.add('slider-dot-active')
 
-                app.render()
+                app.sliderRender()
                 return app.itemActive
             },
 
@@ -697,20 +725,6 @@
                         nextBtn.click()
                     }, 3000);
                 }
-                
-                // document.addEventListener("DOMContentLoaded", () => {
-                //     const navs = [...$$('.header-nav')]
-
-                //     for (let i = 0; i < navs.length; i++) {
-                //         const element = navs[i];
-                //         element.addEventListener("click", function () {
-                //         e.preventDefault()
-                //         app.navActive = Number(e.target.dataset.indexNumber);
-                //         app.render()
-                //         return app.navActive
-                //         }) 
-                //     }
-                // });
 
                 for (let i = 0; i < dots.length; i++) {
                     const element = dots[i];
@@ -722,13 +736,30 @@
                 for (let i = 0; i < projectDots.length; i++) {
                     const element = projectDots[i];
                     element.addEventListener("click", function (e) {
+                        app.projectDot = i
                         app.handleProjectDot(e)
                     })
+                }
+
+                project.onmouseover = function() {
+                    clearInterval(intervalProject)
+                }
+
+                project.onmouseout = function () {
+                    intervalProject = setInterval(() => {
+                        if (app.projectDot < projectDots.length - 1) {
+                            app.projectDot ++
+                        } else {
+                            app.projectDot = 0
+                        }
+                        projectDots[app.projectDot].click()
+                    }, 4000);
                 }
             },
 
             start: function () {
                 this.render()
+                this.sliderRender()
                 this.handleEvent()
             }
         }
