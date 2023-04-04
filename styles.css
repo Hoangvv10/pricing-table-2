@@ -186,7 +186,7 @@
     border-radius: 25px;
     cursor: pointer;
     font-size: 1.9rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .slider-second-btn { 
@@ -368,10 +368,10 @@
 }
 
 .home-item-2 {
-    width: 22%;
+    width: 261px;
     border-radius: 55px;
     margin-bottom: 40px;
-    height: 800px;
+    height: 750px;
 }
 
 .home-item-2:hover {
@@ -391,10 +391,17 @@
 }
 
 .home-item:hover, .home-item-2:hover {
-    transform: scaleY(1.05);
+    transform: scaleY(1.06);
     cursor: pointer;
 }
 
+.home-item-2 .new-tag {
+    left: 16%;
+}
+
+.home-item-2 .is-line-through {
+    color: #99a9b5;
+}
 
 .home-item-2:hover .home-section-1__btn {
     background-color: #27E1C1;
@@ -415,6 +422,17 @@
 .home-price, .home-title {
     padding: 24px 0;
     font-weight: 300;
+}
+
+.sub-home-title {
+    font-size: 1.6rem;
+    color: #bbc6ce;
+    display: none;
+}
+
+.home-item:hover .sub-home-title {
+    display: block;
+    text-transform: none;
 }
 
 .sub-title-2 {
@@ -525,7 +543,7 @@
     justify-content: center;
     border-radius: 20px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     width: 120px;
     height: 40px;
 }
@@ -543,6 +561,7 @@
 .home-content__item-2 {
     padding: 12px 0;
     font-size: 1.6rem;
+    color: #5f727f;
 }
 
 .home-item .new-tag {
@@ -561,7 +580,7 @@
     position: absolute;
     top: -4%;
     left: 20%;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .home-section-2__btn {
@@ -598,7 +617,7 @@
     font-size: 1.9rem;
     text-transform: uppercase;
     margin: 20px 0;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1.2px;
     color: #fff;
     width: fit-content;
@@ -701,7 +720,7 @@
 }
 
 .footer-comment {
-    height: 70px;   ;
+    height: 70px;
 }
 
 .letter-icon {
@@ -728,6 +747,7 @@
     color: #fff;
     background-color: #1b1c25;
     padding: 0 8px;
+    border: none;
 }
 
 .footer-input-icon {
@@ -793,7 +813,7 @@
 
 .form-btn {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.4rem;
     width: 100%;
     background-color: #393d50;
@@ -807,6 +827,35 @@
     opacity: 1;
 }
 
+.useful-body li::before{
+  content: "\2022";
+  color: #00bcd4;
+  font-weight: bold; 
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.useful-item {
+    font-size: 1.6rem;
+    padding: 6px 0;
+    border-top: 1px dashed #5f727f;
+    text-transform: capitalize;
+}
+
+.useful-item:hover {
+    color: #00bcd4;
+    cursor: pointer;
+}
+
+.useful-item:hover::before {
+    color: #fff;
+}
+
+.useful-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
 
 .form-btn:hover {
     background-color: #5f727f;

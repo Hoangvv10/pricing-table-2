@@ -24,6 +24,10 @@ input {
     background-color: transparent;
 }
 
+textarea:focus, input:focus {
+    outline: white solid 1px;
+}
+
 a {
     color: #000;
     text-decoration: none;
