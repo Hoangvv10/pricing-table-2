@@ -17,9 +17,14 @@
         <header id="header">
             <div class="header-wrapper">
                 <div class="inner">
+                    <div class="mobile-cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
                     <div class="header-logo">
                         <img src="./assets/imgs/0.webp" alt="logo">
                     </div>
+                    
                     <div class="header-navigate">
                         <ul class="header-navs">
 
@@ -38,6 +43,26 @@
                         <div class="header-cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                             <div class="cart-num">2</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-header">
+                        <div class="mobile-navs__icon">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="mobile-navs">
+                            <div class="mobile-navs__container">
+                                <div class="mobile-navs__header">
+                                    <div class="mobile-search">
+                                        <input type="text" class="mobile-search__input" placeholder="Search...">
+                                        <i class="fa-solid fa-magnifying-glass mobile-search-icon" ></i>
+                                    </div>
+                                    <div class="mobile-close">
+                                        <i class="fa-solid fa-xmark" class="mobile-close__icon"></i>
+                                    </div>
+                                </div>
+                                <ul class="mobile-navs__body"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,7 +117,7 @@
                 <div class="inner">
                     <div class="footer-section">
                         <div class="logo">
-                            <img src="./assets/imgs/0.webp" alt="logo">
+                            <img src="./assets/imgs/logo_1x-2.webp" alt="logo">
                         </div>
                         <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.
@@ -296,6 +321,10 @@
 
         const language = $('.language')
         const headerNav = $('.header-navs')
+        const mobileNav = $('.mobile-navs__body')
+        const mobileOpenBtn = $('.mobile-navs__icon')
+        const mobileCloseBtn = $('.mobile-close')
+        const mobileNavContainer = $('.mobile-navs__container')
         const sliderDiv = $('.slider-list')
         const nextBtn = $('.slider-right-arrow')
         const prevBtn = $('.slider-left-arrow')
@@ -306,6 +335,8 @@
         const sliderWrapper = $('#slider')
         const project = $('.project-body')
         const projectDots = $$('.project-dot')
+
+
 
         const createArr = (numUsers) => {
             return new Array(numUsers)
@@ -533,11 +564,16 @@
             render: function () {
                 const headerHtmls = app.navs.map(item => {
                     return `
-                    <li class="header-nav ${item.id === app.navActive ? 'is-active' : ''}" data-index-number=${item.id} >${item.title}</li>
+                    <li class="header-nav ${item.id === app.navActive ? 'is-active' : ''}" data-index-number=${item.id} >
+                        <p>${item.title}</p>
+                        <span class="header-nav__icon"><i class="fa-solid fa-angle-right"></i></span>
+                    </li>
                     `
                 })
 
                 headerNav.innerHTML = headerHtmls.join('')
+                mobileNav.innerHTML = headerHtmls.join('')
+                
 
                 const section1Htmls = app.courses.map(item => {
                     return `
@@ -735,6 +771,16 @@
                 //         projectDots[app.projectDot].click()
                 //     }, 4000);
                 // }
+
+                mobileOpenBtn.onclick = function () {
+                    mobileNavContainer.classList.remove('dis-none')
+                    mobileNavContainer.classList.add('dis-block')
+                }
+
+                mobileCloseBtn.onclick = function () {
+                    mobileNavContainer.classList.remove('dis-block')
+                    mobileNavContainer.classList.add('dis-none')
+                }
             },
 
             start: function () {
