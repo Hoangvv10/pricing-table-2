@@ -578,6 +578,22 @@
                 sliderDiv.innerHTML = sliderHtmls.join('')  
             },
 
+            projectRender: function () {
+                const projectHtmls = app.projectGr.map((item, index) => {
+                    return `
+                        <div class="footer-feed-body project-items ${app.projectItemActive === index ? 'project-active' : ''}">
+                            ${app.itemProjectGr.map(x => {
+                                return `
+                                    <div class="footer-feed-item"></div>
+                                `
+                            }).join('')}           
+                        </div>
+                    `
+                })
+
+                project.innerHTML = projectHtmls.join('')
+            },
+
             render: function () {
                 const headerHtmls = app.navs.map(item => {
                     return `
@@ -665,20 +681,6 @@
 
                 section2.innerHTML = section2Htmls.join('')
 
-                const projectHtmls = app.projectGr.map((item, index) => {
-                    return `
-                        <div class="footer-feed-body project-items ${app.projectItemActive === index ? 'project-active' : ''}">
-                            ${app.itemProjectGr.map(x => {
-                                return `
-                                    <div class="footer-feed-item"></div>
-                                `
-                            }).join('')}           
-                        </div>
-                    `
-                })
-
-                project.innerHTML = projectHtmls.join('')
-
             },
 
             handleNext: function () {
@@ -735,7 +737,7 @@
                 }
 
                 e.target.classList.add('dot-active-2')
-                app.render()
+                app.projectRender()
                 return app.projectItemActive
             },
 
@@ -803,6 +805,7 @@
             start: function () {
                 this.render()
                 this.sliderRender()
+                this.projectRender()
                 this.handleEvent()
             }
         }
