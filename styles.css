@@ -225,11 +225,11 @@
     line-height: 80px;
     background-color: #212331;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .slider-left-arrow:hover, .slider-right-arrow:hover {
     background-color: #00bcd4;
-    
 }
 
 .slider-left-arrow {
@@ -370,7 +370,7 @@
 }
 
 .home-item-2:hover .is-line-through {
-    color: #5f727f;
+    color: #444c56;
 }
 
 .is-line-through {
@@ -630,13 +630,16 @@
 }
 
 .footer-wrapper > .inner {
-    justify-content: space-between;
-    align-items: start;
+    display: block;
     padding-bottom: 80px;
 }
 
 .footer-section {
     width: 22%;
+}
+
+#footer .logo {
+    margin-bottom: 12px;
 }
 
 .footer-title {
@@ -999,6 +1002,12 @@
     cursor: pointer;
 }
 
+.footer-part {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 @-webkit-keyframes scale-in-center {
     0% {
       -webkit-transform: scale(0);
@@ -1024,9 +1033,6 @@
     }
   }
   
-
-  
-
 @media screen
 and (min-width: 980px) 
 and (max-width: 1200px) {
@@ -1259,10 +1265,6 @@ and (max-width: 1200px) {
         padding: 0 8px;
     }
 
-    #footer .logo {
-        margin-bottom: 12px;
-    }
-
     .mobile-search__input {
         width: 90%;
     }
@@ -1273,5 +1275,9 @@ and (max-width: 1200px) {
 
     .slider-btn, .slider-second-btn {
         font-size: 1.2rem;
+    }
+
+    .top-para {
+        margin-top: 20px;
     }
 }
