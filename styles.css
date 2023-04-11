@@ -100,6 +100,11 @@
     line-height: 12px;
 }
 
+.user-active {
+    color: #00bcd4;
+    position: relative;
+}
+
 .cart-num::after {
     content: '';
     position: absolute;
@@ -112,7 +117,7 @@
     border-bottom: 6px solid transparent;
 }
 
-.mobile-header, .mobile-cart, .header-nav__icon, .mobile-navs__container     {
+.mobile-header,.login-popup, .mobile-cart, .header-nav__icon, .mobile-navs__container     {
     display: none;
 }
 
@@ -124,6 +129,57 @@
     display: block !important;
 }
 
+.login-popup::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    top: -20px;
+}
+
+.login-popup {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    z-index: 999;
+    padding: 12px;
+    color: #2c2e3d;
+    border-radius: 16px;
+}
+
+.popup-body, .name {
+    display: flex;
+    align-items: center;
+}
+
+.log-out {
+    margin-top: 16px;
+    text-align: right;
+    text-decoration: underline;
+}
+
+.log-out:hover {
+    color: #00bcd4;
+}
+
+.name {
+    padding-left: 12px;
+}
+
+.avatar {
+    background-color: #2c2e3d;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+}
+
+.user-active:hover .login-popup {
+    display: block;
+}
 
 @media only screen and (max-width: 480px) {
     .slider-right-arrow, .slider-left-arrow {
@@ -356,6 +412,7 @@
 
 .home-section-1 {
     background-color: #f0f3f2;
+    /* padding-bottom: 100px; */
 }
 
 .home-section-1, .home-section-2 {
@@ -379,6 +436,7 @@
 
 .home-item {
     width: 25%;
+    height: 650px;
 }
 
 .home-item:hover .home-sub__body {
@@ -409,11 +467,12 @@
     text-align: center;
     border: #acabab solid 1px;
     background-color: #f0f3f2;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.5s linear;
+
 }
 
 .home-item:hover, .home-item-2:hover {
-    transform: scaleY(1.06);
+    transform: scaleY(1.05);
     cursor: pointer;
 }
 
@@ -1039,6 +1098,7 @@
     position: fixed;
     inset: 0;
     background-color: rgba(0,0,0,.3);
+    display: none;
 }
 
 .modal-wrapper {

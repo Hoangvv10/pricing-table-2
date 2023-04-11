@@ -16,6 +16,10 @@ function showErrorToast() {
     });
 }
 
+function setLoginState (flag) {
+    localStorage.setItem("isLogin", JSON.stringify(flag));
+}
+
 function toast({ title = "", message = "", type = "info", duration = 3000 }) {
     const main = document.getElementById("toast");
     if (main) {
@@ -64,7 +68,6 @@ function Validator (options) {
     let selectorRules = {}
     const submitBtn = document.querySelector('.form-submit')
 
-
     function validate (inputE, rule) {
 
         let errorMessage
@@ -79,7 +82,7 @@ function Validator (options) {
         if (errorMessage) {
             inputE.parentElement.classList.add('invalid')
             errorPan.innerText = errorMessage
-            showErrorToast()
+            
             submitBtn.setAttribute('disabled', '');
 
         } else {
@@ -111,6 +114,7 @@ function Validator (options) {
 
             if (isValid){
                 showSuccessToast()
+                setLoginState(true)
                 if (typeof options.onSubmit === 'function') {
                     let enableInputs = formElement.querySelectorAll('[name]');
 
@@ -120,9 +124,11 @@ function Validator (options) {
                     }, {});
                     options.onSubmit(formValues)
                 }
-            } else {
-                showErrorToast()
             }
+
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
         }
 
 
