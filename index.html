@@ -41,10 +41,14 @@
                         <div class="header-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <div class="signup">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
                         <div class="header-cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                             <div class="cart-num">2</div>
                         </div>
+                        
                     </div>
 
                     <div class="mobile-header">
@@ -329,8 +333,48 @@
                 </div>
             </div>             
         </div>
-    </div>
+        </div>
+        <div class="modal">
+            <div class="modal-wrapper">
+                <form class="signup-form" id="signup">
 
+                    <div class="signup-header">
+                        <div class="signup-header__icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="signup-header__title">
+                            Sign Up
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-input__container">
+                            <input type="text" name="username" class="form-input name-input" placeholder="Username...">
+                            <p class="input-message"></p>
+                        </div>
+                        <div class="form-input__container">
+                            <input type="text" name="email" class="form-input email-input" placeholder="Email...">
+                            <p class="input-message"></p>
+                        </div>
+                        <div class="form-input__container">
+                            <input type="text" name="password" class="form-input password-input" placeholder="Password...">
+                            <p class="input-message"></p>
+                        </div>
+                        <div class="form-input__container">
+                            <input type="text" name="Confirm password" class="form-input password-confirm-input" placeholder="Confirm password...">
+                            <p class="input-message"></p>
+                        </div>
+                    </div>
+                    
+                    <button class="form-submit" type="submit">SIGN UP</button>
+                    
+                  </div>
+                </form>
+            </div>
+            <div id="toast"></div>
+            
+        </div>
+    </div>
+    <script src="./modal.js"></script>
 
     <script>
         const $ = document.querySelector.bind(document)
@@ -352,14 +396,14 @@
         const sliderWrapper = $('#slider')
         const project = $('.project-body')
         const projectDots = $$('.project-dot')
+        const modal = $('.modal')
+        const modalWrapper = $('.modal-wrapper')
+        const signup = $('.signup')
 
-
-
-        const createArr = (numUsers) => {
+                const createArr = (numUsers) => {
             return new Array(numUsers)
                 .fill(undefined)
         }
-
 
         const app = {
             itemActive: 1,
@@ -683,6 +727,11 @@
 
             },
 
+            handleNav: function () {
+                app.navActive = e.target.dataset.indexNumber 
+                app.render()
+            },
+
             handleNext: function () {
               if (app.itemActive < app.slider.length) {
                 dots[app.itemActive-1].classList.remove('slider-dot-active')
@@ -800,6 +849,30 @@
                     mobileNavContainer.classList.remove('dis-block')
                     mobileNavContainer.classList.add('dis-none')
                 }
+
+                setTimeout(() => {
+                    const headNav = $('.header-nav')
+                    for (let index = 0; index < headNav.length; index++) {
+                        const element = headNav[index];
+                        element.onclick = function (e) {
+                            app.handleNav(e)
+                        }
+                    }
+                }, 2000);
+
+                signup.onclick = function (e) {
+                    modal.classList.remove('dis-none')
+                    modal.classList.add('dis-block')
+                }
+
+                modal.onclick = function (e) {
+                    e.preventDefault()
+                    if(!modalWrapper.contains(e.target)) {
+                        modal.classList.remove('dis-block')
+                        modal.classList.add('dis-none')
+                    }
+                }
+
             },
 
             start: function () {
@@ -809,6 +882,26 @@
                 this.handleEvent()
             }
         }
+        
+        Validator({
+                form: '.signup-form',
+                errorSelector: '.input-message',
+                rules: [
+                    Validator.isRequired('.name-input'),
+                    Validator.isRequired('.email-input'),
+                    Validator.isEmail('.email-input'),
+                    Validator.isRequired('.password-input'),
+                    Validator.minLength('.password-input', 8),
+                    Validator.isRequired('.password-confirm-input'),
+                    Validator.isConfirmed('.password-confirm-input', function () {
+                    return document.querySelector('.signup-form .password-input').value
+                    }, 'Password is not matched!')
+                ],
+                onSubmit: function (data) {
+                    console.log(data);
+                }
+            })
+
         
         app.start()
     </script>
