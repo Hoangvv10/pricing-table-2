@@ -79,6 +79,7 @@ function Validator (options) {
         if (errorMessage) {
             inputE.parentElement.classList.add('invalid')
             errorPan.innerText = errorMessage
+            showErrorToast()
             submitBtn.setAttribute('disabled', '');
 
         } else {
