@@ -232,7 +232,7 @@
                     </div>
 
                     <div class="footer-part">
-                        <div class="footer-section">
+                        <div class="footer-section address-section">
                             <div class="contact">
                                 <div class="footer-title">Contact</div>
                                 <div class="footer-item">
@@ -408,6 +408,7 @@
         const modal = $('.modal')
         const modalWrapper = $('.modal-wrapper')
         const signup = $('.signup')
+        const formInputs = [...$$('.form-input__container')]
 
         const logOut = $('.log-out')
 
@@ -806,6 +807,7 @@
                     signup.classList.add('user-active')
 
                 } else {
+                    modal.classList.add('dis-block')
                     signup.classList.remove('user-active')
                     signup.onclick = function (e) {
                         modal.classList.remove('dis-none')
@@ -889,6 +891,9 @@
                     if(!modalWrapper.contains(e.target)) {
                         modal.classList.remove('dis-block')
                         modal.classList.add('dis-none')
+                        for (let index = 0; index < formInputs.length; index++) {
+                            formInputs[index].classList.remove('invalid')
+                        }
                     }
                 }
 

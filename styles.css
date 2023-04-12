@@ -772,6 +772,10 @@
     overflow: hidden;
 }
 
+.address-section {
+    margin-top: -80px;
+}
+
 .footer-item {
     margin-top: 8px;
 }
@@ -1190,6 +1194,14 @@
 .footer-text {
     color: #00bcd4;
     cursor: pointer;
+}
+
+.input-message {
+    visibility: hidden;
+}
+
+.invalid .input-message {
+    visibility: visible;
 }
 
 #toast {
