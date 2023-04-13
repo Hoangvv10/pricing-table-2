@@ -82,7 +82,6 @@ function Validator (options) {
         if (errorMessage) {
             inputE.parentElement.classList.add('invalid')
             errorPan.innerText = errorMessage
-            
             submitBtn.setAttribute('disabled', '');
 
         } else {
@@ -94,6 +93,7 @@ function Validator (options) {
     }
 
         const formElement = document.querySelector(options.form)
+
 
         formElement.addEventListener("submit", (e) => {
             e.preventDefault()

@@ -772,6 +772,8 @@
     overflow: hidden;
 }
 
+
+
 .address-section {
     margin-top: -80px;
 }
@@ -1549,5 +1551,9 @@ and (max-width: 1200px) {
 
     .top-para {
         margin-top: 20px;
+    }
+
+    .address-section {
+        margin-top: 0;
     }
 }
