@@ -16,12 +16,15 @@ body {
     text-rendering: optimizespeed;
 }
 
-
 button,
 input {
     outline: none;
     border: none;
     background-color: transparent;
+}
+
+textarea:focus, input:focus {
+    outline: white solid 1px;
 }
 
 a {

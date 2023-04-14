@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Table</title>
+    <link rel="icon" type="image/x-icon" href="/assets/imgs/favicon.ico">
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,15 +12,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="app">
         <header id="header">
             <div class="header-wrapper">
                 <div class="inner">
+                    <div class="mobile-cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
                     <div class="header-logo">
                         <img src="./assets/imgs/0.webp" alt="logo">
                     </div>
+                    
                     <div class="header-navigate">
                         <ul class="header-navs">
 
@@ -28,14 +34,48 @@
                     </div>
                     <div class="header-options">
                         <div class="header-languages">
-                            <img src="./assets/imgs/Uk-flag.png" alt="" class="flag-img">
+                            <div class="language">
+                                <img src="./assets/imgs/Uk-flag.png" alt="" class="flag-img">
+                            </div>
                         </div>
                         <div class="header-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <div class="signup">
+                            <i class="fa-solid fa-user"></i>
+                            <div class="login-popup">
+                                <div class="popup-body">
+                                    <div class="avatar"></div>
+                                    <div class="name">Account name</div>
+                                </div>
+                                <div class="popup-footer">
+                                    <p class="log-out">Log Out</p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="header-cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                             <div class="cart-num">2</div>
+                        </div>  
+                    </div>
+
+                    <div class="mobile-header">
+                        <div class="mobile-navs__icon">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="mobile-navs">
+                            <div class="mobile-navs__container">
+                                <div class="mobile-navs__header">
+                                    <div class="mobile-search">
+                                        <input type="text" class="mobile-search__input" placeholder="Search...">
+                                        <i class="fa-solid fa-magnifying-glass mobile-search-icon" ></i>
+                                    </div>
+                                    <div class="mobile-close">
+                                        <i class="fa-solid fa-xmark" class="mobile-close__icon"></i>
+                                    </div>
+                                </div>
+                                <ul class="mobile-navs__body"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,9 +86,7 @@
             <div id="slider">
                 <div class="slider-wrapper">
                     <div class="inner">
-                        <div class="slider-list">
-
-                        </div>    
+                        <div class="slider-list"></div>    
                     </div>
                     <div class='slider-right-arrow'>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -58,9 +96,9 @@
                     </div>
                     <div class="slider-dots">
                         <div class='slider-dot slider-dot-active' data-index-number='1' ></div>
-                        <div class='slider-dot' data-index-number='2' ></div>
-                        <div class='slider-dot' data-index-number='3' ></div>
-                        <div class='slider-dot' data-index-number='4' ></div>
+                        <div class='slider-dot' data-index-number='2'></div>
+                        <div class='slider-dot' data-index-number='3'></div>
+                        <div class='slider-dot' data-index-number='4'></div>
                     </div>
                 </div>
             </div>
@@ -74,12 +112,8 @@
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </div>
                         <div class="home-body">
-                            <div class="home-section-1">
-                            
-                            </div>
-                        <div class="home-section-2">
-                            
-                        </div>
+                            <div class="home-section-1"></div>
+                        <div class="home-section-2"></div>
                     </div>     
                 </div>          
             </div>
@@ -88,168 +122,170 @@
         <div id="footer">
             <div class="footer-wrapper">
                 <div class="inner">
-                    <div class="footer-section">
-                        <div class="logo">
-                            <img src="./assets/imgs/0.webp" alt="logo">
+                    <div class="footer-part">                    
+                        <div class="footer-section">
+                            <div class="logo">
+                                <img src="./assets/imgs/logo_1x-2.webp" alt="logo">
+                            </div>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.
+                            </p>
                         </div>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.
-                        </p>
-                        <div class="contact">
-                            <div class="footer-title">Contact</div>
-                            <div class="footer-item">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span> Address:</span>
-                                <p class="footer-address">124 Abc street, Washington, DC, United States</p>
+                        <div class="footer-section">
+                            <div class="recent">
+                                <div class="footer-title top-para">recent posts</div>
+                                <div class="body">
+                                    <div class="footer-recent-item">
+                                        <div class="footer-recent-img">
+    
+                                        </div>
+                                        <div class="footer-recent-content">
+                                            <p class="footer-recent-title">It was made more popular in graphic design circles when DTP was born because it came installed with Aldus Pagemaker.</p>
+                                            <div class="footer-status">
+                                                <p class="footer-status-date">1 April 2023</p>
+                                                <p class="footer-comment-num">
+                                                    <i class="fa-solid fa-comment"></i>
+                                                   <span>0</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="footer-recent-item">
+                                        <div class="footer-recent-img">
+    
+                                        </div>
+                                        <div class="footer-recent-content">
+                                            <p class="footer-recent-title">It was made more popular in graphic design circles when DTP was born because it came installed with Aldus Pagemaker.</p>
+                                            <div class="footer-status">
+                                                <p class="footer-status-date">1 April 2023</p>
+                                                <p class="footer-comment-num">
+                                                    <i class="fa-solid fa-comment"></i>
+                                                   <span>0</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="footer-recent-item">
+                                        <div class="footer-recent-img">
+    
+                                        </div>
+                                        <div class="footer-recent-content">
+                                            <p class="footer-recent-title">It was made more popular in graphic design circles when DTP was born because it came installed with Aldus Pagemaker.</p>
+                                            <div class="footer-status">
+                                                <p class="footer-status-date">1 April 2023</p>
+                                                <p class="footer-comment-num">
+                                                    <i class="fa-solid fa-comment"></i>
+                                                   <span>0</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
                             </div>
-                            <div class="footer-item">
-                                <i class="fa-solid fa-phone"></i>
-                               <span class="website">Phone: </span>
-                                <span>+84 123 456 789</span>
+                        </div>
+                        <div class="footer-section">
+                            <div class="recent">
+                                <div class="footer-title top-para">email us</div>
+                                <div class="body">
+                                    <form class="form">
+                                        <div class='footer-name'>
+                                            <input placeholder="Your name" type='text' class='footer-contact-input'/>
+                                        </div>
+                                        <div class='footer-email'>
+                                            <input placeholder="Your email address" type='text' class='footer-contact-input'/>
+                                        </div>
+                                        <div class='footer-comment'>
+                                        <textarea placeholder="Your message" cols="40" rows="5" type='text' class='footer-contact-input'></textarea>
+                                        </div>
+                                        <button class="form-btn">SEND MESSAGE</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="footer-item">
-                                <i class="fa-solid fa-print"></i>
-                               <span class="website">Fax: </span>
-                               <span>+84 123 456 789</span>
-                            </div>
-                            <div class="footer-item">
-                                <i class="fa-solid fa-envelope"></i>
-                               <span class="website">Email: </span>
-                              <span class="footer-link">company@gmail.com</span>
-                            </div>
-                            <div class="footer-item">
-                                <i class="fa-solid fa-earth-americas"></i>
-                               <span class="website">Website: </span>
-                               <span class="footer-link">www.website.com</span>
+                        </div>
+                        <div class="footer-section">
+                            <div class="recent">
+                                <div class="footer-title top-para">flick feed</div>
+                                <div class="footer-feed-body">
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                    <div class="footer-feed-item"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-section">
-                        <div class="recent">
-                            <div class="footer-title top-para">recent posts</div>
-                            <div class="body">
-                                <div class="footer-recent-item">
-                                    <div class="footer-recent-img">
-
-                                    </div>
-                                    <div class="footer-recent-content">
-                                        <p class="footer-recent-title">It was made more popular in graphic design circles when DTP was born because it came installed with Aldus Pagemaker.</p>
-                                        <div class="footer-status">
-                                            <p class="footer-status-date">1 April 2023</p>
-                                            <p class="footer-comment-num">
-                                                <i class="fa-solid fa-comment"></i>
-                                               <span>0</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>  
-                                <div class="footer-recent-item">
-                                    <div class="footer-recent-img">
-
-                                    </div>
-                                    <div class="footer-recent-content">
-                                        <p class="footer-recent-title">It was made more popular in graphic design circles when DTP was born because it came installed with Aldus Pagemaker.</p>
-                                        <div class="footer-status">
-                                            <p class="footer-status-date">1 April 2023</p>
-                                            <p class="footer-comment-num">
-                                                <i class="fa-solid fa-comment"></i>
-                                               <span>0</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>  
-                                <div class="footer-recent-item">
-                                    <div class="footer-recent-img">
-
-                                    </div>
-                                    <div class="footer-recent-content">
-                                        <p class="footer-recent-title">It was made more popular in graphic design circles when DTP was born because it came installed with Aldus Pagemaker.</p>
-                                        <div class="footer-status">
-                                            <p class="footer-status-date">1 April 2023</p>
-                                            <p class="footer-comment-num">
-                                                <i class="fa-solid fa-comment"></i>
-                                               <span>0</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>  
+                    <div class="footer-part">
+                        <div class="footer-section address-section">
+                            <div class="contact">
+                                <div class="footer-title">Contact</div>
+                                <div class="footer-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span> Address:</span>
+                                    <p class="footer-address">124 Abc street, Washington, DC, United States</p>
+                                </div>
+                                <div class="footer-item">
+                                    <i class="fa-solid fa-phone"></i>
+                                   <span class="website">Phone: </span>
+                                    <span>+84 123 456 789</span>
+                                </div>
+                                <div class="footer-item">
+                                    <i class="fa-solid fa-print"></i>
+                                   <span class="website">Fax: </span>
+                                   <span>+84 123 456 789</span>
+                                </div>
+                                <div class="footer-item">
+                                    <i class="fa-solid fa-envelope"></i>
+                                   <span class="website">Email: </span>
+                                  <span class="footer-link">company@gmail.com</span>
+                                </div>
+                                <div class="footer-item">
+                                    <i class="fa-solid fa-earth-americas"></i>
+                                   <span class="website">Website: </span>
+                                   <span class="footer-link">www.website.com</span>
+                                </div>
                             </div>
+                        </div>
+                        <div class="footer-section">
                             <div class="footer-title">useful links</div>
-                            <div class="footer-item">
-                                <p class="footer-address">124 Abc street, Washington</p>
-                            </div>
-                            <div class="footer-item">
-                                <p class="footer-address">124 Abc street, Washington</p>
-                            </div>
-                            <div class="footer-item">
-                                <p class="footer-address">124 Abc street, Washington</p>
-                            </div>
+                            <ul class="useful-body">
+                                <li class="useful-item">general infomation for users</li>
+                                <li class="useful-item">interactive fairy tales</li>
+                                <li class="useful-item">offical story book maker website</li>
+                                <li class="useful-item">everyday mathenatics links</li>
+                                <li class="useful-item">basic knowledge and experience</li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="footer-section">
-                        <div class="recent">
-                            <div class="footer-title top-para">email us</div>
-                            <div class="body">
-                                <form class="form">
-                                    <div class='footer-name'>
-                                        <input placeholder="Your name" type='text' class='footer-contact-input'/>
-                                        
-                                    </div>
-                                    <div class='footer-email'>
-                                        <input placeholder="Your email address" type='text' class='footer-contact-input'/>
-                                        
-                                    </div>
-                                    <div class='footer-comment'>
-                                    <textarea placeholder="Your message" cols="40" rows="5" type='text' class='footer-contact-input'></textarea>
-                                    </div>
-
-                                    <button class="form-btn">SEND MESSAGE</button>
-                                </form>
-                            </div>
+                        <div class="footer-section">
                             <div class="footer-title">Projects / client ?</div>
-                            <div class="project-body">
-                                
-                            </div>
+                            <div class="project-body"></div>
                             <div class="project-dots">
                                 <div class="project-dot dot-active-2" data-index-number="0"></div>
                                 <div class="project-dot" data-index-number="1"></div>
                                 <div class="project-dot" data-index-number="2"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="footer-section">
-                        <div class="recent">
-                            <div class="footer-title top-para">flick feed</div>
-                            <div class="footer-feed-body">
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                                <div class="footer-feed-item"></div>
-                            </div>
+                        <div class="footer-section">
                             <div class="footer-title">New letter</div>
-                            <p>
-                                Subscribe and stayup to date with all events coming straight in your mail box
-                            </p>
-                            <div class="letter">
-                                <input placeholder="Your email address" type="text" class="letter-input" />
-                                <div class="letter-icon">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <span style="color: aqua; padding-right: 4px;">*</span>
-                                <span>Personal infomation will be encrypted</span>
-                            </div>
+                    <p>
+                        Subscribe and stayup to date with all events coming straight in your mail box
+                    </p>
+                    <div class="letter">
+                        <input placeholder="Your email address" type="text" class="letter-input" />
+                        <div class="letter-icon">
+                            <i class="fa-solid fa-angle-right"></i>
                         </div>
                     </div>
-
+                    <div>
+                        <span style="color: aqua; padding-right: 4px;">*</span>
+                        <span>Personal infomation will be encrypted</span>
+                    </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="footer-bottom">
@@ -263,22 +299,22 @@
                                 <div class='bottom-nav'>Privacy Policy</div>
                             </div>
                             <div class='bottom-item'>
-                                <div class='bottom-icon'>
+                                <div class='bottom-icon' style="color: #786f4c">
                                     <i class="fa-brands fa-instagram"></i>
                                 </div>
-                                <div class='bottom-icon'>
+                                <div class='bottom-icon' style="color: #315bd6">
                                     <i class="fa-brands fa-facebook"></i>
                                 </div>
-                                <div class='bottom-icon'>
+                                <div class='bottom-icon' style="color: #0288d1">
                                     <i class="fa-brands fa-linkedin"></i>
                                 </div>
-                                <div class='bottom-icon'>
+                                <div class='bottom-icon' style="color: #ae0e0e">
                                     <i class="fa-brands fa-youtube"></i>
                                 </div>
-                                <div  class='bottom-icon'>
-                                    <i class="fa-brands fa-github"></i>
+                                <div  class='bottom-icon' style="color: #16a7b9">
+                                    <i class="fa-brands fa-twitter"></i>
                                 </div>
-                                <div  class='bottom-icon'>
+                                <div  class='bottom-icon' style="color: #f44336">
                                     <i class="fa-brands fa-google"></i>
                                 </div>
                             </div>
@@ -287,14 +323,54 @@
                 </div>
             </div>             
         </div>
-    </div>
+        </div>
+        <div class="modal">
+            <div class="modal-wrapper">
+                <form class="signup-form" id="signup">
 
+                    <div class="signup-header">
+                        <div class="signup-header__icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="signup-header__title">
+                            Sign Up
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-input__container">
+                            <input type="text" name="username" class="form-input name-input" placeholder="Username...">
+                            <p class="input-message"></p>
+                        </div>
+                        <div class="form-input__container">
+                            <input type="text" name="email" class="form-input email-input" placeholder="Email...">
+                            <p class="input-message"></p>
+                        </div>
+                        <div class="form-input__container">
+                            <input type="password" name="password" class="form-input password-input" placeholder="Password...">
+                            <p class="input-message"></p>
+                        </div>
+                        <div class="form-input__container">
+                            <input type="password" name="Confirm password" class="form-input password-confirm-input" placeholder="Confirm password...">
+                            <p class="input-message"></p>
+                        </div>
+                    </div>
+                    <button class="form-submit" type="submit">SIGN UP</button>
+                  </div>
+                </form>
+            </div>
+            <div id="toast"></div>
+        </div>
+    </div>
+    <script src="./modal.js"></script>
 
     <script>
-        const $ = document.querySelector.bind(document)
-        const $$ = document.querySelectorAll.bind(document)
 
+        const language = $('.language')
         const headerNav = $('.header-navs')
+        const mobileNav = $('.mobile-navs__body')
+        const mobileOpenBtn = $('.mobile-navs__icon')
+        const mobileCloseBtn = $('.mobile-close')
+        const mobileNavContainer = $('.mobile-navs__container')
         const sliderDiv = $('.slider-list')
         const nextBtn = $('.slider-right-arrow')
         const prevBtn = $('.slider-left-arrow')
@@ -305,6 +381,11 @@
         const sliderWrapper = $('#slider')
         const project = $('.project-body')
         const projectDots = $$('.project-dot')
+        const modal = $('.modal')
+        const modalWrapper = $('.modal-wrapper')
+        const signup = $('.signup')
+        const formInputs = [...$$('.form-input__container')]
+        const logOut = $('.log-out')
 
         const createArr = (numUsers) => {
             return new Array(numUsers)
@@ -317,6 +398,7 @@
             projectItemActive: 0,
             projectGr: createArr(3),
             itemProjectGr: createArr(6),
+            projectDot: 0,
 
             navs: [
                 {
@@ -501,15 +583,7 @@
                 }
             ],
 
-            render: function () {
-                const headerHtmls = app.navs.map(item => {
-                    return `
-                    <li class="header-nav ${item.id === app.navActive ? 'is-active' : ''}" data-index-number=${item.id} >${item.title}</li>
-                    `
-                })
-
-                headerNav.innerHTML = headerHtmls.join('')
-
+            sliderRender: function () {
                 const sliderHtmls = app.slider.map(item => {
                     return `
                             <div class="slider-item ${app.itemActive === item.id && 'slide-active'}" id=${item.id}>
@@ -532,12 +606,46 @@
                     `
                 })
 
-                sliderDiv.innerHTML = sliderHtmls.join('')
+                sliderDiv.innerHTML = sliderHtmls.join('')  
+            },
+
+            projectRender: function () {
+                const projectHtmls = app.projectGr.map((item, index) => {
+                    return `
+                        <div class="footer-feed-body project-items ${app.projectItemActive === index ? 'project-active' : ''}">
+                            ${app.itemProjectGr.map(x => {
+                                return `
+                                    <div class="footer-feed-item"></div>
+                                `
+                            }).join('')}           
+                        </div>
+                    `
+                })
+
+                project.innerHTML = projectHtmls.join('')
+            },
+
+            render: function () {
+                const headerHtmls = app.navs.map(item => {
+                    return `
+                    <li class="header-nav ${item.id === app.navActive ? 'is-active' : ''}" data-index-number=${item.id} >
+                        <p>${item.title}</p>
+                        <span class="header-nav__icon"><i class="fa-solid fa-angle-right"></i></span>
+                    </li>
+                    `
+                })
+
+                headerNav.innerHTML = headerHtmls.join('')
+                mobileNav.innerHTML = headerHtmls.join('')
+                
 
                 const section1Htmls = app.courses.map(item => {
                     return `
                         <div class="home-item">
-                            <div class="home-title">${item.title}</div>
+                            <div class="home-title">
+                                <p>${item.title}</p>
+                                <p class='sub-home-title'>The best price/quantity plan *</p>    
+                            </div>
                             <div class="home-price ${item.id === 1 ? 'first' : item.id === 2 ? 'second' : item.id === 3 ? 'third' : 'fourth'}">
                                 ${item.price}
                                 <br>
@@ -604,20 +712,11 @@
 
                 section2.innerHTML = section2Htmls.join('')
 
-                const projectHtmls = app.projectGr.map((item, index) => {
-                    return `
-                        <div class="footer-feed-body project-items ${app.projectItemActive === index ? 'project-active' : ''}">
-                            ${app.itemProjectGr.map(x => {
-                                return `
-                                    <div class="footer-feed-item"></div>
-                                `
-                            }).join('')}           
-                        </div>
-                    `
-                })
+            },
 
-                project.innerHTML = projectHtmls.join('')
-
+            handleNav: function () {
+                app.navActive = e.target.dataset.indexNumber 
+                app.render()
             },
 
             handleNext: function () {
@@ -630,7 +729,7 @@
                 dots[3].classList.remove('slider-dot-active')
                 app.itemActive = 1
               }
-              app.render()
+              app.sliderRender()
               return app.itemActive
             },
 
@@ -644,7 +743,7 @@
                     dots[app.itemActive-2].classList.add('slider-dot-active')
                     app.itemActive--
                 }
-                app.render()
+                app.sliderRender()
                 return app.itemActive
             },
 
@@ -659,7 +758,7 @@
 
                 e.target.classList.add('slider-dot-active')
 
-                app.render()
+                app.sliderRender()
                 return app.itemActive
             },
 
@@ -674,12 +773,26 @@
                 }
 
                 e.target.classList.add('dot-active-2')
-                app.render()
+                app.projectRender()
                 return app.projectItemActive
             },
 
-            handleEvent: function () {
+            handleUser: function () {
+                if (JSON.parse(localStorage.getItem("isLogin"))) {
+                    signup.classList.add('user-active')
 
+                } else {
+                    modal.classList.add('dis-block')
+                    signup.classList.remove('user-active')
+                    signup.onclick = function (e) {
+                        modal.classList.remove('dis-none')
+                        modal.classList.add('dis-block')
+                    }
+                } 
+            },
+
+            handleEvent: function () {
+                
                 nextBtn.onclick = function () {
                     app.handleNext()
                 }
@@ -697,20 +810,6 @@
                         nextBtn.click()
                     }, 3000);
                 }
-                
-                // document.addEventListener("DOMContentLoaded", () => {
-                //     const navs = [...$$('.header-nav')]
-
-                //     for (let i = 0; i < navs.length; i++) {
-                //         const element = navs[i];
-                //         element.addEventListener("click", function () {
-                //         e.preventDefault()
-                //         app.navActive = Number(e.target.dataset.indexNumber);
-                //         app.render()
-                //         return app.navActive
-                //         }) 
-                //     }
-                // });
 
                 for (let i = 0; i < dots.length; i++) {
                     const element = dots[i];
@@ -722,17 +821,91 @@
                 for (let i = 0; i < projectDots.length; i++) {
                     const element = projectDots[i];
                     element.addEventListener("click", function (e) {
+                        app.projectDot = i
                         app.handleProjectDot(e)
                     })
+                }
+
+                project.onmouseover = function() {
+                    clearInterval(intervalProject)
+                }
+
+                project.onmouseout = function () {
+                    intervalProject = setInterval(() => {
+                        if (app.projectDot < projectDots.length - 1) {
+                            app.projectDot ++
+                        } else {
+                            app.projectDot = 0
+                        }
+                        projectDots[app.projectDot].click()
+                    }, 4000);
+                }
+
+                mobileOpenBtn.onclick = function () {
+                    mobileNavContainer.classList.remove('dis-none')
+                    mobileNavContainer.classList.add('dis-block')
+                }
+
+                mobileCloseBtn.onclick = function () {
+                    mobileNavContainer.classList.remove('dis-block')
+                    mobileNavContainer.classList.add('dis-none')
+                }
+
+                setTimeout(() => {
+                    const headNav = $('.header-nav')
+                    for (let index = 0; index < headNav.length; index++) {
+                        const element = headNav[index];
+                        element.onclick = function (e) {
+                            app.handleNav(e)
+                        }
+                    }
+                }, 2000);
+
+                modal.onclick = function (e) {
+                    e.preventDefault()
+                    if(!modalWrapper.contains(e.target)) {
+                        modal.classList.remove('dis-block')
+                        modal.classList.add('dis-none')
+                        for (let index = 0; index < formInputs.length; index++) {
+                            formInputs[index].classList.remove('invalid')
+                        }
+                    }
+                }
+
+                logOut.onclick = function () {
+                    localStorage.setItem("isLogin", "false")
+                    location.reload()
                 }
             },
 
             start: function () {
                 this.render()
+                this.sliderRender()
+                this.projectRender()
                 this.handleEvent()
+                this.handleUser()
             }
         }
         
+        Validator({
+                form: '.signup-form',
+                errorSelector: '.input-message',
+                rules: [
+                    Validator.isRequired('.name-input'),
+                    Validator.isRequired('.email-input'),
+                    Validator.isEmail('.email-input'),
+                    Validator.isRequired('.password-input'),
+                    Validator.minLength('.password-input', 8),
+                    Validator.isRequired('.password-confirm-input'),
+                    Validator.isConfirmed('.password-confirm-input', function () {
+                    return document.querySelector('.signup-form .password-input').value
+                    }, 'Password is not matched!')
+                ],
+                onSubmit: function (data) {
+                    console.log(data);
+                }
+            })
+
         app.start()
     </script>
 </body>
