@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="app">
@@ -37,7 +38,6 @@
                                 <img src="./assets/imgs/Uk-flag.png" alt="" class="flag-img">
                             </div>
                         </div>
-
                         <div class="header-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
@@ -56,8 +56,7 @@
                         <div class="header-cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                             <div class="cart-num">2</div>
-                        </div>
-                        
+                        </div>  
                     </div>
 
                     <div class="mobile-header">
@@ -86,10 +85,8 @@
         <div id="container">
             <div id="slider">
                 <div class="slider-wrapper">
-                    <div class="inner" style="max-width: 100vw; overflow: hidden;">
-                        <div class="slider-list">
-
-                        </div>    
+                    <div class="inner">
+                        <div class="slider-list"></div>    
                     </div>
                     <div class='slider-right-arrow'>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -99,9 +96,9 @@
                     </div>
                     <div class="slider-dots">
                         <div class='slider-dot slider-dot-active' data-index-number='1' ></div>
-                        <div class='slider-dot' data-index-number='2' ></div>
-                        <div class='slider-dot' data-index-number='3' ></div>
-                        <div class='slider-dot' data-index-number='4' ></div>
+                        <div class='slider-dot' data-index-number='2'></div>
+                        <div class='slider-dot' data-index-number='3'></div>
+                        <div class='slider-dot' data-index-number='4'></div>
                     </div>
                 </div>
             </div>
@@ -115,12 +112,8 @@
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </div>
                         <div class="home-body">
-                            <div class="home-section-1">
-                            
-                            </div>
-                        <div class="home-section-2">
-                            
-                        </div>
+                            <div class="home-section-1"></div>
+                        <div class="home-section-2"></div>
                     </div>     
                 </div>          
             </div>
@@ -197,20 +190,16 @@
                                     <form class="form">
                                         <div class='footer-name'>
                                             <input placeholder="Your name" type='text' class='footer-contact-input'/>
-                                            
                                         </div>
                                         <div class='footer-email'>
                                             <input placeholder="Your email address" type='text' class='footer-contact-input'/>
-                                            
                                         </div>
                                         <div class='footer-comment'>
                                         <textarea placeholder="Your message" cols="40" rows="5" type='text' class='footer-contact-input'></textarea>
                                         </div>
-    
                                         <button class="form-btn">SEND MESSAGE</button>
                                     </form>
                                 </div>
-                                
                             </div>
                         </div>
                         <div class="footer-section">
@@ -230,7 +219,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="footer-part">
                         <div class="footer-section address-section">
                             <div class="contact">
@@ -274,9 +262,7 @@
                         </div>
                         <div class="footer-section">
                             <div class="footer-title">Projects / client ?</div>
-                            <div class="project-body">
-                                
-                            </div>
+                            <div class="project-body"></div>
                             <div class="project-dots">
                                 <div class="project-dot dot-active-2" data-index-number="0"></div>
                                 <div class="project-dot" data-index-number="1"></div>
@@ -300,11 +286,6 @@
                     </div>
                         </div>
                     </div>
-                    
-
-                    
-                    
-
                 </div>
 
                 <div class="footer-bottom">
@@ -365,29 +346,24 @@
                             <p class="input-message"></p>
                         </div>
                         <div class="form-input__container">
-                            <input type="text" name="password" class="form-input password-input" placeholder="Password...">
+                            <input type="password" name="password" class="form-input password-input" placeholder="Password...">
                             <p class="input-message"></p>
                         </div>
                         <div class="form-input__container">
-                            <input type="text" name="Confirm password" class="form-input password-confirm-input" placeholder="Confirm password...">
+                            <input type="password" name="Confirm password" class="form-input password-confirm-input" placeholder="Confirm password...">
                             <p class="input-message"></p>
                         </div>
                     </div>
-                    
                     <button class="form-submit" type="submit">SIGN UP</button>
-                    
                   </div>
                 </form>
             </div>
             <div id="toast"></div>
-            
         </div>
     </div>
     <script src="./modal.js"></script>
 
     <script>
-        const $ = document.querySelector.bind(document)
-        const $$ = document.querySelectorAll.bind(document)
 
         const language = $('.language')
         const headerNav = $('.header-navs')
@@ -409,10 +385,9 @@
         const modalWrapper = $('.modal-wrapper')
         const signup = $('.signup')
         const formInputs = [...$$('.form-input__container')]
-
         const logOut = $('.log-out')
 
-                const createArr = (numUsers) => {
+        const createArr = (numUsers) => {
             return new Array(numUsers)
                 .fill(undefined)
         }
@@ -931,7 +906,6 @@
                 }
             })
 
-        
         app.start()
     </script>
 </body>

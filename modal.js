@@ -1,3 +1,6 @@
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
+
 function showSuccessToast() {
     toast({
       title: "Success!",
@@ -24,7 +27,6 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
     const main = document.getElementById("toast");
     if (main) {
         const toast = document.createElement("div");
-
         const autoRemoveId = setTimeout(function () {
             main.removeChild(toast);
         }, duration + 1000);
@@ -65,14 +67,15 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
 function Validator (options) {
     
-    let selectorRules = {}
-    const submitBtn = document.querySelector('.form-submit')
+    const selectorRules = {}
+    const submitBtn = $('.form-submit')
+    const formElement = $(options.form)
 
     function validate (inputE, rule) {
 
         let errorMessage
-        let errorPan = inputE.parentElement.querySelector(options.errorSelector)
-        let rules = selectorRules[rule.selector]
+        const errorPan = inputE.parentElement.querySelector(options.errorSelector)
+        const rules = selectorRules[rule.selector]
 
         for (let i = 0; i < rules.length; ++i) {
             errorMessage = rules[i](inputE.value);
@@ -92,45 +95,41 @@ function Validator (options) {
         return !errorMessage
     }
 
-        const formElement = document.querySelector(options.form)
 
+    formElement.addEventListener("submit", (e) => {
+        e.preventDefault()
+    })
 
-        formElement.addEventListener("submit", (e) => {
-            e.preventDefault()
+    submitBtn.onclick = function (e) {
+        e.preventDefault()
+        let isValid = true
+
+        options.rules.forEach(function (rule) {
+            const inputE = formElement.querySelector(rule.selector)
+            let valid =  validate(inputE, rule)
+            if (!valid){
+                isValid = false;
+            }
         })
 
-        submitBtn.onclick = function (e) {
-            e.preventDefault()
+        if (isValid){
+            showSuccessToast()
+            setLoginState(true)
+            if (typeof options.onSubmit === 'function') {
+                let enableInputs = formElement.querySelectorAll('[name]');
 
-            let isValid = true
-
-            options.rules.forEach(function (rule) {
-                let inputE = formElement.querySelector(rule.selector)
-                let valid =  validate(inputE, rule)
-                if (!valid){
-                    isValid = false;
-                }
-            })
-
-            if (isValid){
-                showSuccessToast()
-                setLoginState(true)
-                if (typeof options.onSubmit === 'function') {
-                    let enableInputs = formElement.querySelectorAll('[name]');
-
-                    let formValues = Array.from(enableInputs).reduce(function (values, input){
-                        (values[input.name] = input.value)
-                        return values;
+                let formValues = Array.from(enableInputs).reduce(function (values, input){
+                (values[input.name] = input.value)
+                return values;
                     }, {});
-                    options.onSubmit(formValues)
-                }
+                options.onSubmit(formValues)
             }
-
-            setTimeout(() => {
-                location.reload();
-            }, 1500);
         }
 
+        setTimeout(() => {
+            location.reload();
+        }, 1500);
+    }
 
     if (formElement) {
         
@@ -161,10 +160,6 @@ function Validator (options) {
         })
     }
 }
-
-
-
-
 
 Validator.isRequired = function (selector) {
     return {
